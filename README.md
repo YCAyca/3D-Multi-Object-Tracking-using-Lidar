@@ -7,7 +7,9 @@ There are various approachs both for implementing a TBD or JDT model reviewed in
 In this study, a TBD architecture is implemented by combination of two different Kalman Filter based track methods to obtain a 3D Multi Object Tracking system.
 
 
-https://user-images.githubusercontent.com/20625822/174857807-e7759208-54e6-4a18-8ea1-afc3b8d59db5.mov
+
+https://user-images.githubusercontent.com/20625822/174858095-02c05e5e-5956-45b9-b766-2c86346a5c40.mov
+
 
 
 # OpenPCDET submodule
