@@ -72,7 +72,7 @@ h = height of the box <br>
 Using the state prediction, state covariance prediction and measurement covariance, the measurement prediction(o'_t+1) and the uncertanty of the predicted measurements (S_t+1) are calculated.
 
 
-<img src="tracking_report/3Dbox.png" width=20% height=100%>
+<img src="tracking_report/3Dbox.png" width=30% height=100%>
 
 * Update 
 
@@ -94,10 +94,10 @@ Same logic is used for calculating the overlap between all the detections and th
 
 This distance matrix then will be used to pick matches.
 
-<img src="tracking_report/iou.png" width=20% height=100%>
+<img src="tracking_report/iou.png" width=40% height=100%>
 
 
-<img src="tracking_report/distance_matrix.png" width=30% height=100%>
+<img src="tracking_report/distance_matrix.png" width=20% height=100%>
 
 ### Houngarian Algorithm
 
@@ -106,7 +106,7 @@ The Hungarian Algorithm is used to find the minimum cost in assignment problems.
 The logic of Houngarian Algorithm is as follows:
 
 
-<img src="tracking_report/houngarian_algo.png" width=30% height=100%>
+<img src="tracking_report/houngarian_algo.png" width=50% height=100%>
 
 After determining the pairs, an IOU threshold is applied to eliminate false matches. All the matches should be higher then this specified threshold.
 
@@ -154,8 +154,6 @@ The logic of the algorithm is as follows:
 Since the algorithm is based on finding the optimal solution for the detections selected in random order, a tracker may be matched with a detection since its the best choice for the detection, but not for the tracker if it has a lower distance with another detection. In that case, the error is not fixed and the tracker is unable to unmatch and rematch with its best choice.
 
 ## Flow Chart of Tracking Mechanism  
-
-++ buraya pb den yola cikarak ilk model implemente edildi vs diyip algoritmayi adim adim anlat
 
 <img src="tracking_report/tracker_algo.png" width=100% height=100%>
 
@@ -215,12 +213,12 @@ A lot of example case shows that a tracker gets removed too fast, (after only 2 
 
 <b> Reason </b> : Low Maximum Age Threshold
 
-Frame 8 - car ID 7
-<img src="tracking_report/prob5_0.png" width=70% height=100%>
-Frame 11 - car ID 13
-<img src="tracking_report/prob5_1.png" width=70% height=100%>
-Frame 25 - car ID 23
-<img src="tracking_report/prob5_2.png" width=70% height=100%>
+Frame 8 - car ID 7 <br>
+<img src="tracking_report/prob5_0.png" width=70% height=100%> <br>
+Frame 11 - car ID 13 <br>
+<img src="tracking_report/prob5_1.png" width=70% height=100%> <br>
+Frame 25 - car ID 23 <br>
+<img src="tracking_report/prob5_2.png" width=70% height=100%> <br>
 
 ## 6. Mobile Lidar Case - Ego Motion Compensation
 
@@ -395,7 +393,7 @@ As an example case, in the following frames the Kalman Predictions and the Detec
 
 Therefore we obtain Kalman Prediction and Detection for the next frame with a distance 5.76.
 
-<img src="tracking_report/motion02.png" width=100% height=70%>
+<img src="tracking_report/motion02.png" width=70% height=70%>
 
 4- Since the match is denied and the Kalman Prediction is not corrected, the prediction and detections boxes continues to diverge.
 
