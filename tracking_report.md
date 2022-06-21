@@ -443,7 +443,7 @@ Quantitave Results, before optimization - after optimization tracking videos can
 
 ## Links
 
-Work Presentation: https://docs.google.com/presentation/d/1KJTM2_2TJPoTkc82bnjgytB4qcphSA6hgcJvKURzSr8/edit?usp=sharing 
+Work Presentation : https://docs.google.com/presentation/d/1KJTM2_2TJPoTkc82bnjgytB4qcphSA6hgcJvKURzSr8/edit?usp=sharing 
 
 Master Thesis Report: <br>
 Vibot Master Thesis pdf in the repo 
