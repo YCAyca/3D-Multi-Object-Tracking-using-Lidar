@@ -72,7 +72,7 @@ h = height of the box <br>
 Using the state prediction, state covariance prediction and measurement covariance, the measurement prediction(o'_t+1) and the uncertanty of the predicted measurements (S_t+1) are calculated.
 
 
-<img src="tracking_report/3Dbox.png" width=50% height=100%>
+<img src="tracking_report/3Dbox.png" width=20% height=100%>
 
 * Update 
 
@@ -94,7 +94,7 @@ Same logic is used for calculating the overlap between all the detections and th
 
 This distance matrix then will be used to pick matches.
 
-<img src="tracking_report/iou.png" width=50% height=100%>
+<img src="tracking_report/iou.png" width=20% height=100%>
 
 
 <img src="tracking_report/distance_matrix.png" width=30% height=100%>
@@ -106,7 +106,7 @@ The Hungarian Algorithm is used to find the minimum cost in assignment problems.
 The logic of Houngarian Algorithm is as follows:
 
 
-<img src="tracking_report/houngarian_algo.png" width=50% height=100%>
+<img src="tracking_report/houngarian_algo.png" width=30% height=100%>
 
 After determining the pairs, an IOU threshold is applied to eliminate false matches. All the matches should be higher then this specified threshold.
 
@@ -116,7 +116,7 @@ Since the goal of the algorithl is to find the global minimum cost, not everytim
 
 ### Architecture Overview
 
-<img src="tracking_report/ab3Dmot_architecture.png" width=100% height=100%>
+<img src="tracking_report/ab3Dmot_architecture.png" width=50% height=100%>
 
 ## 2. Probabilistic 3D Multi-Object Tracking for Autonomous Driving 
  
@@ -134,7 +134,7 @@ Mahalonobis distance is the distance between a point and a distribution. And not
 
 In this task, it is used to calculate the disttance between the detection and predicted tracker location instead of IOU in previous model. The distance matrix is created again between each detection and tracker to be applied an matching algorithm on. In contrary from IOU, the lower the distance, the better 
 
-<img src="tracking_report/mahala.png" width=50% height=100%>
+<img src="tracking_report/mahala.png" width=30% height=100%>
 
 
 ### Greedy Algorithm 
@@ -147,7 +147,7 @@ The logic of the algorithm is as follows:
 2. Repeat the same step for 2. lowest, 3. lowest, ... n. lowest options for all the detections.
 3. Travel the pair list and accept the detection - tracker pair as a match if neither the detection nor the tracker has been selected before.
 
-<img src="tracking_report/greedy.png" width=50% height=100%>
+<img src="tracking_report/greedy.png" width="30% height=100%>
 
 * Weak Point of Greedy Match
 
@@ -167,9 +167,9 @@ Since the algorithm is based on finding the optimal solution for the detections 
 
 There are some false positives occurs in tracking even if it doesn't come from tracking.
 
-<img src="tracking_report/prob1_0.png" width=100% height=70%>
-<img src="tracking_report/prob1_1.png" width=100% height=70%>
-<img src="tracking_report/prob1_2.png" width=100% height=70%>
+<img src="tracking_report/prob1_0.png" width=70% height=70%>
+<img src="tracking_report/prob1_1.png" width=70% height=70%>
+<img src="tracking_report/prob1_2.png" width=70% height=70%>
 
 <b> Reason </b> : Low Mahalanobis Threshold 
     
@@ -185,11 +185,11 @@ instead of visualizing the new tracker directly, we keep "track of trackers" and
 The rule explained above is not applied for the initial frames since we can't expect a tracker takes 5 times match in first or second scene... <br>
 This makes the initial frames weaker and all the detections passes directly to the tracking results.  
 
-<img src="tracking_report/prob2.png" width=100% height=70%>
+<img src="tracking_report/prob2.png" width=70% height=100%>
 
 ## 3. Old False Positive Tracker Comes back without Detection
 
-<img src="tracking_report/prob3.png" width=100% height=70%>
+<img src="tracking_report/prob3.png" width=70% height=100%>
 
 With a frame_count variable, we keep track on which frame we are. For the first frames, we accept the detections directly to begin with. General conditions to create a new tracker for a new detection are applied if and only if we are beyond of first few initial frames. 
 
@@ -201,9 +201,9 @@ This frame count is kept individually for each class (which is a bug for me), an
 
 The Kalman prediction without detection update doesn't work very well if the detection is lost while the object is orienting. 
 
-<img src="tracking_report/prob4_0.png" width=100% height=70%>
-<img src="tracking_report/prob4_1.png" width=100% height=70%>
-<img src="tracking_report/prob4_2.png" width=100% height=70%>
+<img src="tracking_report/prob4_0.png" width=70% height=100%>
+<img src="tracking_report/prob4_1.png" width=70% height=100%>
+<img src="tracking_report/prob4_2.png" width=70% height=100%>
 
 <b> Reason </b> : Kalman Filter's Constant Velocity 
 
@@ -216,11 +216,11 @@ A lot of example case shows that a tracker gets removed too fast, (after only 2 
 <b> Reason </b> : Low Maximum Age Threshold
 
 Frame 8 - car ID 7
-<img src="tracking_report/prob5_0.png" width=100% height=70%>
+<img src="tracking_report/prob5_0.png" width=70% height=100%>
 Frame 11 - car ID 13
-<img src="tracking_report/prob5_1.png" width=100% height=70%>
+<img src="tracking_report/prob5_1.png" width=70% height=100%>
 Frame 25 - car ID 23
-<img src="tracking_report/prob5_2.png" width=100% height=70%>
+<img src="tracking_report/prob5_2.png" width=70% height=100%>
 
 ## 6. Mobile Lidar Case - Ego Motion Compensation
 
@@ -232,25 +232,25 @@ When the lidar is mobile, the coordinates of the object in lidar frame changes e
 
 Example1 - Linear Ego Motion Effect
 
-<img src="tracking_report/ego_mot_prob00.png" width=100% height=70%>
+<img src="tracking_report/ego_mot_prob00.png" width=70% height=100%>
 
-<img src="tracking_report/ego_mot_prob01.png" width=100% height=70%>
+<img src="tracking_report/ego_mot_prob01.png" width=70% height=100%>
 
-<img src="tracking_report/ego_mot_prob02.png" width=100% height=70%>
+<img src="tracking_report/ego_mot_prob02.png" width=70% height=100%>
 
-<img src="tracking_report/ego_mot_prob03.png" width=100% height=70%>
+<img src="tracking_report/ego_mot_prob03.png" width=70% height=100%>
 
 It is seen that Car ID 10, which is a stationary car object moves in the same direction with ego motion. Instead of getting closer to the lidar since its stable and the lidar vehicle moves toward this object, the location of the object in lidar frame stays stable since the object is moved at the same direction too.
 
 Example2 - Angular Ego Motion Effect
 
-<img src="tracking_report/ego_mot_prob10.png" width=100% height=70%>
+<img src="tracking_report/ego_mot_prob10.png" width=70% height=70%>
 
-<img src="tracking_report/ego_mot_prob11.png" width=100% height=70%>
+<img src="tracking_report/ego_mot_prob11.png" width=70% height=70%>
 
-<img src="tracking_report/ego_mot_prob12.png" width=100% height=70%>
+<img src="tracking_report/ego_mot_prob12.png" width=70% height=70%>
 
-<img src="tracking_report/ego_mot_prob13.png" width=100% height=70%>
+<img src="tracking_report/ego_mot_prob13.png" width=70% height=70%>
 
 The same problem arises when the lidar vehicle orients. It is seen that the object rotates in the same direction.
 
@@ -267,15 +267,15 @@ When a tracker stays unmatched because the detection is lost for that frame, a n
 
 Frame 112: 
 
-<img src="tracking_report/prob_maha0.png" width=100% height=70%>
+<img src="tracking_report/prob_maha0.png" width=70% height=70%>
 
 Frame 122:
 
-<img src="tracking_report/prob_maha1.png" width=100% height=70%>
+<img src="tracking_report/prob_maha1.png" width=70% height=70%>
 
 Frame 125:
 
-<img src="tracking_report/prob_maha2.png" width=100% height=70%>
+<img src="tracking_report/prob_maha2.png" width=70% height=70%>
 
 <b> Match Deny Mechanism </b>
 
@@ -290,7 +290,7 @@ After examining the change on trackers' positions, I decided to use the distance
 
 <b> Result </b>
 
-<img src="tracking_report/match_deny_result.png" width=100% height=70%>
+<img src="tracking_report/match_deny_result.png" width=70% height=70%>
 
 ## 2. Additional Conditions for Initial Frames
 
@@ -316,8 +316,8 @@ self.kf.P[7:,7:] *= 1000. <br>
 self.kf.P *= 10.   <br>
 self.kf.Q[7:,7:] *= 0.01 <br>
 
-<img src="tracking_report/kalman10.png" width=100% height=70%>
-<img src="tracking_report/kalman11.png" width=100% height=70%>
+<img src="tracking_report/kalman10.png" width=70% height=70%>
+<img src="tracking_report/kalman11.png" width=70% height=70%>
 
 It is seen that the results get even worse since the uncertainty of the detections is increased and the false orientation predictions of Kalman can't be updated enough with detections to correct the measurement.
 
@@ -328,9 +328,9 @@ self.kf.P[7:,7:] *= 1000. <br>
 self.kf.P *= 10.   <br>
 self.kf.Q[7:,7:] *= 0.01 <br> 
 
-<img src="tracking_report/kalman20.png" width=100% height=70%>
-<img src="tracking_report/kalman21.png" width=100% height=70%>
-<img src="tracking_report/kalman22.png" width=100% height=70%>
+<img src="tracking_report/kalman20.png" width=70% height=70%>
+<img src="tracking_report/kalman21.png" width=70% height=70%>
+<img src="tracking_report/kalman22.png" width=70% height=70%>
 
 This time the box orientation is obtained very well but we realize that the Kalman Prediction lost its effect so when the object is not detected, Kalman Prediction can't effectively update the tracker to move on on the same direction that it was moving before losing the detection. At the end since the tracker box stayed far, we can't obtain a match when we detect the object again and the model assigns a new tracker with a new ID to the same object.
 
@@ -342,10 +342,10 @@ self.kf.P *= 10.   <br>
 
 Instead of reducing the detection noise, the prediction noise is augmented. <br>(The default of Q is an idendity matrix so if self.kf.Q[7:,7:] *= 0.01 line is removed dx dy dz da is augmented to 1)
 
-<img src="tracking_report/kalman30.png" width=100% height=70%>
-<img src="tracking_report/kalman31.png" width=100% height=70%>
-<img src="tracking_report/kalman32.png" width=100% height=70%>
-<img src="tracking_report/kalman33.png" width=100% height=70%>
+<img src="tracking_report/kalman30.png" width=70% height=70%>
+<img src="tracking_report/kalman31.png" width=70% height=70%>
+<img src="tracking_report/kalman32.png" width=70% height=70%>
+<img src="tracking_report/kalman33.png" width=70% height=70%>
 
 We see that with this approach we can obtain very good results on orienting boxes without causing any additional problem.
 
@@ -369,14 +369,14 @@ To handle with mobile lidar case, the velocity of the lidar vehicle is used to u
 
     The linear speed of the vehicle is given in OXTS file as vf and vl in m/s unit. 
 
-    <img src="tracking_report/ego_motion_compensation.png" width=100% height=70%>
+    <img src="tracking_report/ego_motion_compensation.png" width=70% height=70%>
 
 ## Local Match Deny Mechanism
 
 
 Different sequences have different properties depending on where the sequence is taken (city, auto road, urban etc). The lidar case (stationary or mobile), the object case(stationary or mobile, if mobile, the direction according to the lidar) effects the relative speed of the object which is very important to determine the Mahalanobis threshold as well as Match Deny Mechanism threshold. 
 
-<img src="tracking_report/rel-abs-velo.png" width=100% height=70%>
+<img src="tracking_report/rel-abs-velo.png" width=70% height=70%>
 
 In other words, a reasonable match deny threshold, which eliminates the wrong matchs by looking the displacement of the tracker between the current and previous frame, may change depending on the lidar - object motion. A car object moving with the same absolute velocity may have different relative velocities according the direction of the move. 
 
@@ -385,11 +385,11 @@ As an example case, in the following frames the Kalman Predictions and the Detec
 
 1- A new detection comes
 
-<img src="tracking_report/motion00.png" width=100% height=70%>
+<img src="tracking_report/motion00.png" width=70% height=70%>
 
 2- A new tracker is initialized for that new detection directly at the same location
 
-<img src="tracking_report/motion01.png" width=100% height=70%>
+<img src="tracking_report/motion01.png" width=70% height=70%>
 
 3- Kalman prediction for the same tracker in the next frame. Since the velocity variables in the state vector is initialized with 0 and its updated after the first match, it is seen that Kalman Prediction comes at the same location with the last frame meanwhile the car didn't stay stable and moved through the lidar vehicle. 
 
@@ -399,9 +399,9 @@ Therefore we obtain Kalman Prediction and Detection for the next frame with a di
 
 4- Since the match is denied and the Kalman Prediction is not corrected, the prediction and detections boxes continues to diverge.
 
-<img src="tracking_report/motion03.png" width=100% height=70%>
-<img src="tracking_report/motion04.png" width=100% height=70%>
-<img src="tracking_report/motion05.png" width=100% height=70%>
+<img src="tracking_report/motion03.png" width=70% height=70%>
+<img src="tracking_report/motion04.png" width=70% height=70%>
+<img src="tracking_report/motion05.png" width=70% height=70%>
 
 Match deny mechanism is created to eliminate some false matches. These false matches are coming especially in crowded scenes like city scenes and a small threshold is needed to eliminate false matches since the cars doesn't move so fast in general. 
 On the other hand in the scenes having not a lot objects like auto roads, where we see just a few car object moving faster than city scenes, not false matches occurs like in city scenes and to not eliminate the true matches a higher threshold should be chosen or the match deny mechnasim should be removed.
@@ -435,8 +435,8 @@ python scripts/KITTI/evaluate.py TrackResults 1 3D 0.25
 ## Results
 
 
-<img src="tracking_report/eval.png" width=100% height=70%>
-<img src="tracking_report/eval2.png" width=100% height=70%>
+<img src="tracking_report/eval.png" width=70% height=70%>
+<img src="tracking_report/eval2.png" width=70% height=70%>
 
 
 Quantitave Results, before optimization - after optimization tracking videos can be found in videos folder.
