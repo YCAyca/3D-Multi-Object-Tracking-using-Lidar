@@ -44,3 +44,28 @@ The outputs folder will contain the results for each sequence in your data (in y
 
 <b> img_movie.py : </b> The helper program to create videos from tracking output images.
 
+Finally, you will obtain all the results in <b>  lidartracking/outputs  </b> folder:
+
+<img src="tracking_report/tracking_outputs.png" width=50% height=50%>
+
+# Fusion with EagerMOT
+
+As an additional step, a fusion using our 3D OpenPCDET detections with an external obtain 2D detections is applied with EagerMOT. A detailed explanation is given in <b> fusion_guide.md  </b>
+
+# Dataset
+
+All the parts of the dataset used for detection, tracking, fusion and the outputs obtained are uploaded in <b> drive </b> https://1drv.ms/u/s!AlyP7yvWuEcHioVQR5exLFjiYhmSKg?e=7xuaC9 . 
+
+calib : KITTI tracking train dataset calibration files <br>
+image_02 : KITTI tracking train dataset left camera images  <br>
+label_02 : KITTI tracking train dataset annotations <br>
+oxts: KITTI tracking train dataset oxts files <br>
+velodyne: KITTI tracking train dataset lidar files <br> 
+openpcdet_for_fusion: OpenPCDet detection results saved in EagerMOT Pointgnn format until 10. sequence. <br>
+pointgnn_t3_motsfusion_rrc : example EagerMOT fusion results <br>
+tracking_outputs : Lidar Tracking results (without fusion, before EagerMOT)  <br>
+
+
+
+
+
