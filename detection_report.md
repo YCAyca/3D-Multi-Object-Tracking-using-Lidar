@@ -5,7 +5,6 @@
 * Kitti 
 * Nuscene
 * Pandaset
-* Kitware 
 
 ## Paper Reviews
 
@@ -13,7 +12,7 @@
 * Voxelnet
 * Second
 * Pointpillar
-* PV-RCNN
+
 
 ## OpenPCDET Usage and Experiments
 
@@ -26,7 +25,6 @@
   * with Kitti
 * Inference 
   * with Kitti
-  * with Kitware on a Kitti Trained Model
 * Test Between Different Datasets
 * OpenPCDet Configuration File 
 
@@ -308,24 +306,6 @@ Everytime pressing enter, it is passed to the next "sample" in the "selected sce
 * Devkit : https://github.com/nutonomy/nuscenes-devkit
 
 * Visualization : https://github.com/pyaf/nuscenes_viz 
-
-## Kitware
-
-<b> The setup contains: </b>
-
-* 1 Lidar (VLP-16 Velodyne): 16 beams, 10Hz 
-
-- x-axes : front, y-axes : left, z axes : up (for ladouatokitti version)
-
-- The intensity range [0,1] (for ladouatokitti version)
-
-- Lidar located at 1.6 m
-
-<b>  Format </b>
-
-- Lidar data contains x, y, z, intensity information in .bin format (for ladouatokitti version)
-
-- No annotation file for now.
 
 ## Comparison Table
 
@@ -834,19 +814,6 @@ The kitti visualizer explained in Datasets -> Kitti section may be used here to 
 
 <img src="detection_report/inference_with_gt.png" width=60% height=50%>
 
-## with Kitware on a Kitti Trained Model
-
-!! Just change _BASE_CONFIG_: cfgs/dataset_configs/kitti_dataset.yaml to cfgs/dataset_configs/kitware_dataset.yaml in kitti_models/second.yaml file
-
-```
-python demo.py --cfg_file cfgs/kitti_models/second.yaml --ckpt /home/yagmur/Desktop/OpenPCDet/output/kitti_models/second/default_15032022/ckpt/checkpoint_epoch_80.pth --data_path /home/yagmur/Desktop/OpenPCDet/data/kitware/velodyne 
-```
-<img src="detection_report/kitware_on_kitti_trained.png" width=60% height=50%>
-<img src="detection_report/kitware_on_kitti_trained2.png" width=60% height=50%>
-<img src="detection_report/kitware_on_kitti_trained3.png" width=60% height=50%>
-
-The result doesnt seem bad but I cant decide if its ground truth or not since the data is more scarce (one box has very less points than a kitti's box due to the usage of 16 beams). But the boxes with higher accuracies seem to be ok.
-
 
 ## with Pandaset on a Pandaset Trained Model
 
@@ -872,17 +839,6 @@ python OpenPCDet/tools/inference_pandaset.py --cfg_file /home/yagmur/lidartracki
 <img src="detection_report/panda_on_kitti2.png" width=60% height=50%>
 <img src="detection_report/panda_on_kitti3.png" width=60% height=50%>
 
-## with Kitware on a Pandaset Trained Model
-
-!! Just change _BASE_CONFIG_: cfgs/dataset_configs/pandaset_dataset.yaml to cfgs/dataset_configs/kitware_dataset.yaml in pandaset_models/pv_rcnn.yaml file
-
-```
-python demo.py --cfg_file cfgs/pandaset_models/pv_rcnn.yaml --ckpt /home/yagmur/Desktop/OpenPCDet/output/pandaset_models/pv_rcnn/default/ckpt/checkpoint_epoch_80.pth --data_path /home/yagmur/Desktop/OpenPCDet/data/kitware/velodyne
-```
-<img src="detection_report/kitware_on_panda.png" width=60% height=50%>
-<img src="detection_report/kitware_on_panda2.png" width=60% height=50%>
-<img src="detection_report/kitware_on_panda3.png" width=60% height=50%>
-
 
 ## with Kitti on a Pandaset Trained Model
 
@@ -892,7 +848,6 @@ python OpenPCDet/tools/demo.py  --cfg_file /home/yagmur/lidartracking/OpenPCDet/
 
 <img src="detection_report/kitti_on_panda.png" width=60% height=50%>
 <img src="detection_report/kitti_on_panda4.png" width=60% height=50%>
-
 
 
 ## Test Between Different Datasets

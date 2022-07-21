@@ -6,6 +6,8 @@ There are various approachs both for implementing a TBD or JDT model reviewed in
 
 In this study, a TBD architecture is implemented by combination of two different Kalman Filter based track methods to obtain a 3D Multi Object Tracking system.
 
+![0001_optim](https://user-images.githubusercontent.com/20625822/174859893-4b15c972-8ee3-42de-a4e6-0d90a2cd3dd2.gif)
+
 # OpenPCDET submodule
 
 OpenPCDET framework is used for Object Detection step to train different models using KITTI dataset with Lidar. <b> detection_report.md </b> file in this repo explains all the steps done for object detection with the usage of the submodule having different example script usages for data preparing, visualization, train and inference.
